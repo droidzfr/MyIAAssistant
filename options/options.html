@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="textContent|optionsPageTitle"></title>
+    <!-- Bootstrap CSS -->
+    <link href="../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="../libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4" data-i18n="textContent|optionsPageHeading"></h2>
+
+        <!-- Tab navigation -->
+        <ul class="nav nav-tabs mb-3" id="optionsTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="agents-tab" data-bs-toggle="tab" data-bs-target="#agents-tab-pane" type="button" role="tab" aria-controls="agents-tab-pane" aria-selected="true" data-i18n="textContent|optionsNavAgents"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="providers-tab" data-bs-toggle="tab" data-bs-target="#providers-tab-pane" type="button" role="tab" aria-controls="providers-tab-pane" aria-selected="false" data-i18n="textContent|optionsNavProviders"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings-tab-pane" type="button" role="tab" aria-controls="settings-tab-pane" aria-selected="false" data-i18n="textContent|optionsNavSettings"></button>
+            </li>
+             <li class="nav-item" role="presentation">
+                <button class="nav-link" id="import-export-tab" data-bs-toggle="tab" data-bs-target="#import-export-tab-pane" type="button" role="tab" aria-controls="import-export-tab-pane" aria-selected="false" data-i18n="textContent|optionsNavImportExport"></button>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="optionsTabsContent">
+            <!-- Agents Tab -->
+            <div class="tab-pane fade show active" id="agents-tab-pane" role="tabpanel" aria-labelledby="agents-tab" tabindex="0">
+                <h4 data-i18n="textContent|optionsAgentsHeading"></h4>
+                <p data-i18n="textContent|optionsAgentsDescription"></p>
+                <button class="btn btn-primary mb-3" id="addAgentButton" data-bs-toggle="modal" data-bs-target="#agentModal">
+                    <i class="bi bi-plus-circle"></i> <span data-i18n="textContent|optionsButtonAddAgent"></span>
+                </button>
+                <!-- Area to display the agent list -->
+                <div id="agentListContainer">
+                    <p data-i18n="textContent|optionsAgentsLoading"></p>
+                    <!-- The agent list will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- Providers Tab -->
+            <div class="tab-pane fade" id="providers-tab-pane" role="tabpanel" aria-labelledby="providers-tab" tabindex="0">
+                <h4 data-i18n="textContent|optionsProvidersHeading"></h4>
+                <p data-i18n="textContent|optionsProvidersDescription"></p>
+                 <button class="btn btn-primary mb-3" id="addProviderButton" data-bs-toggle="modal" data-bs-target="#providerModal">
+                    <i class="bi bi-plus-circle"></i> <span data-i18n="textContent|optionsButtonAddProvider"></span>
+                 </button>
+                 <!-- Area to display the provider list -->
+                 <div id="providerListContainer">
+                    <p data-i18n="textContent|optionsProvidersLoading"></p>
+                    <!-- The provider list will be injected here by JS -->
+                 </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-pane fade" id="settings-tab-pane" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">
+                <h4 data-i18n="textContent|optionsSettingsHeading"></h4>
+                <!-- TODO: Content for general settings -->
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" role="switch" id="syncStorageSwitch">
+                    <label class="form-check-label" for="syncStorageSwitch" data-i18n="textContent|optionsSettingsLabelUseSync"></label>
+                </div>
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch">
+                    <label class="form-check-label" for="darkModeSwitch" data-i18n="textContent|optionsSettingsLabelDarkMode"></label>
+                </div>
+                <div class="mb-3">
+                    <label for="languageSelect" class="form-label" data-i18n="textContent|optionsSettingsLabelLanguage"></label>
+                    <select class="form-select" id="languageSelect">
+                        <option value="auto" data-i18n="textContent|optionsSettingsLanguageAuto"></option>
+                        <option value="en" data-i18n="textContent|optionsSettingsLanguageEnglish"></option>
+                        <option value="fr" data-i18n="textContent|optionsSettingsLanguageFrench"></option>
+                    </select>
+                    <div class="form-text" data-i18n="textContent|optionsSettingsLanguageHelpText"></div>
+                </div>
+                <!-- Other settings -->
+            </div>
+
+            <!-- Import/Export Tab -->
+            <div class="tab-pane fade" id="import-export-tab-pane" role="tabpanel" aria-labelledby="import-export-tab" tabindex="0">
+                <h4 data-i18n="textContent|optionsImportExportHeading"></h4>
+                <p data-i18n="textContent|optionsImportExportDescription"></p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="textContent|optionsExportTitle"></h5>
+                        <p class="card-text" data-i18n="textContent|optionsExportDescription"></p>
+                        <button type="button" class="btn btn-secondary" id="exportAllButton">
+                            <i class="bi bi-download"></i> <span data-i18n="textContent|optionsButtonExport"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="textContent|optionsImportTitle"></h5>
+                        <p class="card-text" data-i18n="html|optionsImportDescription"></p>
+                        <button type="button" class="btn btn-warning" id="importAllButton">
+                             <i class="bi bi-upload"></i> <span data-i18n="textContent|optionsButtonImport"></span>
+                        </button>
+                         <input type="file" id="importAllFile" accept=".json" style="display: none;">
+                    </div>
+                </div>
+            </div>
+            <!-- End Import/Export Tab -->
+
+        </div>
+    </div>
+
+    <!-- Agent Modal -->
+    <div class="modal fade" id="agentModal" tabindex="-1" aria-labelledby="agentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="agentModalLabel"></h1> <!-- Title set by JS -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="agentForm">
+                        <input type="hidden" id="agentId"> <!-- For editing -->
+                        <div class="mb-3">
+                            <label for="agentName" class="form-label" data-i18n="html|optionsModalLabelAgentNameRequired"></label>
+                            <input type="text" class="form-control" id="agentName" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="agentProvider" class="form-label" data-i18n="textContent|optionsModalLabelProvider"></label>
+                                <select class="form-select" id="agentProvider">
+                                    <option selected value="" data-i18n="textContent|optionsSelectChooseProvider"></option>
+                                    <!-- Options loaded from configured providers -->
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="agentModelSelect" class="form-label" data-i18n="textContent|optionsModalLabelModelName"></label>
+                                <select class="form-select" id="agentModelSelect">
+                                    <option value="" selected data-i18n="textContent|optionsModalPlaceholderChooseProviderFirst"></option>
+                                    <!-- Models loaded dynamically -->
+                                </select>
+                                <!-- Optional: Add input for custom model if needed -->
+                                <!-- <input type="text" class="form-control mt-2" id="agentModelCustom" placeholder="Or enter a custom model name..."> -->
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="agentSystemPrompt" class="form-label" data-i18n="textContent|optionsModalLabelSystemPrompt"></label>
+                            <textarea class="form-control" id="agentSystemPrompt" rows="3" data-i18n="placeholder|optionsModalPlaceholderSystemPrompt"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="agentUserPrompt" class="form-label" data-i18n="textContent|optionsModalLabelUserPrompt"></label>
+                            <textarea class="form-control" id="agentUserPrompt" rows="5" data-i18n="placeholder|optionsModalPlaceholderUserPrompt"></textarea>
+                            <div class="form-text" data-i18n="textContent|optionsModalUserPromptHelpText"></div>
+                        </div>
+
+                        <h5 class="mt-4" data-i18n="textContent|optionsModalHeadingAdvancedSettings"></h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="agentTemperature" class="form-label" data-i18n="textContent|optionsModalLabelTemperature"></label>
+                                <input type="number" class="form-control" id="agentTemperature" step="0.1" min="0" max="2" data-i18n="placeholder|optionsModalPlaceholderTemperature">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="agentTopP" class="form-label" data-i18n="textContent|optionsModalLabelTopP"></label>
+                                <input type="number" class="form-control" id="agentTopP" step="0.1" min="0" max="1" data-i18n="placeholder|optionsModalPlaceholderTopP">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="agentPresencePenalty" class="form-label" data-i18n="textContent|optionsModalLabelPresencePenalty"></label>
+                                <input type="number" class="form-control" id="agentPresencePenalty" step="0.1" min="-2" max="2" data-i18n="placeholder|optionsModalPlaceholderPenalty">
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="agentFrequencyPenalty" class="form-label" data-i18n="textContent|optionsModalLabelFrequencyPenalty"></label>
+                                <input type="number" class="form-control" id="agentFrequencyPenalty" step="0.1" min="-2" max="2" data-i18n="placeholder|optionsModalPlaceholderPenalty">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="textContent|optionsModalButtonCancel"></button>
+                    <button type="submit" class="btn btn-primary" form="agentForm" data-i18n="textContent|optionsModalButtonSave"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Agent Modal -->
+
+    <!-- Provider Modal -->
+    <div class="modal fade" id="providerModal" tabindex="-1" aria-labelledby="providerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="providerModalLabel"></h1> <!-- Title set by JS -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="providerForm">
+                        <input type="hidden" id="providerId"> <!-- For editing -->
+                        <div class="mb-3">
+                            <label for="providerName" class="form-label" data-i18n="html|optionsModalLabelProviderNameRequired"></label>
+                            <input type="text" class="form-control" id="providerName" required data-i18n="placeholder|optionsModalPlaceholderProviderName">
+                        </div>
+                         <div class="mb-3">
+                            <label for="providerApiKey" class="form-label" data-i18n="html|optionsModalLabelApiKeyRequired"></label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="providerApiKey" required data-i18n="placeholder|optionsModalPlaceholderApiKey">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleApiKeyVisibility" data-i18n="title|optionsButtonToggleApiKeyVisibility">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                             <div class="form-text" data-i18n="textContent|optionsModalApiKeyHelpText"></div>
+                        </div>
+                         <div class="mb-3">
+                            <label for="providerEndpointUrl" class="form-label" data-i18n="textContent|optionsModalLabelEndpointUrl"></label>
+                            <input type="url" class="form-control" id="providerEndpointUrl" data-i18n="placeholder|optionsModalPlaceholderEndpointUrl">
+                             <div class="form-text" data-i18n="textContent|optionsModalEndpointUrlHelpText"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="providerModels" class="form-label" data-i18n="html|optionsModalLabelModels"></label>
+                            <div id="providerModelsContainer" class="d-flex flex-wrap gap-2 mb-2"></div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="newModelInput" data-i18n="placeholder|optionsModalPlaceholderNewModel">
+                                <button class="btn btn-outline-secondary" type="button" id="addModelButton" data-i18n="html|optionsButtonAddModel"></button>
+                            </div>
+                            <div class="form-text" data-i18n="html|optionsModalHelpModels"></div>
+                        </div>
+                        <h5 class="mt-4" data-i18n="textContent|optionsModalHeadingAdvancedSettings"></h5>
+                         <div class="form-text mb-2" data-i18n="textContent|optionsModalAdvancedSettingsHelpText"></div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="providerTemperature" class="form-label" data-i18n="textContent|optionsModalLabelTemperature"></label>
+                                <input type="number" class="form-control" id="providerTemperature" step="0.1" min="0" max="2" data-i18n="placeholder|optionsModalPlaceholderTemperature">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="providerTopP" class="form-label" data-i18n="textContent|optionsModalLabelTopP"></label>
+                                <input type="number" class="form-control" id="providerTopP" step="0.1" min="0" max="1" data-i18n="placeholder|optionsModalPlaceholderTopP">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="providerPresencePenalty" class="form-label" data-i18n="textContent|optionsModalLabelPresencePenalty"></label>
+                                <input type="number" class="form-control" id="providerPresencePenalty" step="0.1" min="-2" max="2" data-i18n="placeholder|optionsModalPlaceholderPenalty">
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="providerFrequencyPenalty" class="form-label" data-i18n="textContent|optionsModalLabelFrequencyPenalty"></label>
+                                <input type="number" class="form-control" id="providerFrequencyPenalty" step="0.1" min="-2" max="2" data-i18n="placeholder|optionsModalPlaceholderPenalty">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="textContent|optionsModalButtonCancel"></button>
+                    <button type="submit" class="btn btn-primary" form="providerForm" data-i18n="textContent|optionsModalButtonSave"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Provider Modal -->
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons (optional, for the + icon) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom JS -->
+    <script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="textContent|extensionName"></title>
+    <!-- Bootstrap CSS -->
+    <link href="../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        /* Ensure popup has a minimum width */
+        body {
+            min-width: 400px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="position-relative">
+            <h5 class="mb-3 text-center" data-i18n="textContent|extensionName"></h5>
+            <button id="openOptionsButton" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-1" data-i18n="title|popupTitleOpenOptions">
+                <i class="bi bi-gear"></i>
+            </button>
+        </div>
+        <!-- Agent selection area -->
+        <div class="mb-3">
+            <label for="agentSelect" class="form-label" data-i18n="textContent|popupLabelAgent"></label>
+            <select class="form-select" id="agentSelect">
+                <option selected data-i18n="textContent|popupChooseAgent"></option>
+                <!-- Agents will be loaded here by JS -->
+            </select>
+        </div>
+
+        <!-- Text input area -->
+        <div class="mb-3">
+            <label for="selectedText" class="form-label" data-i18n="textContent|popupLabelSelectedText"></label>
+            <textarea class="form-control" id="selectedText" rows="5" data-i18n="placeholder|popupPlaceholderSelectedText"></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" class="btn btn-primary w-100 mb-3" id="submitButton" data-i18n="textContent|popupButtonQueryAgent"></button>
+        <!-- Status/error area moved here -->
+        <div id="statusMessage" class="alert alert-info mb-3" role="alert" style="display: none;" data-i18n="textContent|popupStatusPlaceholder">
+             <!-- Status content will be set by JS -->
+        </div>
+        <!-- Response area -->
+        <div class="mb-3">
+            <label for="responseText" class="form-label" data-i18n="textContent|popupLabelResponse"></label>
+            <textarea class="form-control" id="responseText" rows="5" readonly data-i18n="placeholder|popupPlaceholderResponse"></textarea>
+            <div class="d-flex justify-content-end mt-2">
+                 <button type="button" class="btn btn-outline-danger btn-sm me-2" id="clearButton" data-i18n="title|popupTitleClear">
+                    <i class="bi bi-eraser"></i> <span data-i18n="textContent|popupButtonClear"></span>
+                 </button>
+                 <button type="button" class="btn btn-secondary btn-sm" id="copyButton" data-i18n="title|popupTitleCopy">
+                    <i class="bi bi-clipboard"></i> <span data-i18n="textContent|popupButtonCopy"></span>
+                 </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script type="module" src="popup.js"></script>
+</body>
+</html>

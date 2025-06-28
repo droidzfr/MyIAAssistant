@@ -1,0 +1,603 @@
+{
+  "extensionName": {
+    "message": "Mon Assistant IA",
+    "description": "Le nom de l'extension."
+  },
+  "extensionDescription": {
+    "message": "Créez et utilisez des agents IA personnalisés pour interagir avec le texte sélectionné sur n'importe quelle page web.",
+    "description": "La description de l'extension."
+  },
+  "popupChooseAgent": {
+    "message": "Choisir un agent...",
+    "description": "Texte de remplacement pour la liste déroulante de sélection d'agent dans la popup."
+  },
+  "popupErrorLoadingAgents": {
+    "message": "Erreur lors du chargement des agents.",
+    "description": "Message d'erreur affiché dans la popup si les agents ne peuvent pas être chargés."
+  },
+  "popupWarningSelectAgent": {
+    "message": "Veuillez sélectionner un agent.",
+    "description": "Message d'avertissement affiché si l'utilisateur essaie de soumettre sans sélectionner d'agent."
+  },
+  "popupWarningEnterText": {
+    "message": "Veuillez saisir ou sélectionner du texte.",
+    "description": "Message d'avertissement affiché si l'utilisateur essaie de soumettre sans texte."
+  },
+  "popupStatusQuerying": {
+    "message": "Interrogation...",
+    "description": "Message d'état/texte du bouton affiché pendant l'attente de la réponse de l'API."
+  },
+  "popupErrorCommunication": {
+    "message": "Erreur de communication : $message$",
+    "description": "Message d'erreur affiché dans la popup pour les erreurs de communication d'exécution.",
+    "placeholders": {
+      "message": {
+        "content": "$1",
+        "example": "Le port de message s'est fermé avant la réception d'une réponse."
+      }
+    }
+  },
+  "popupErrorApi": {
+    "message": "Erreur API : $error$",
+    "description": "Message d'erreur affiché dans la popup pour les erreurs API.",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Clé API invalide."
+      }
+    }
+  },
+  "popupErrorNoResponse": {
+    "message": "Aucune réponse reçue.",
+    "description": "Message d'erreur affiché si aucune réponse n'est reçue du script d'arrière-plan."
+  },
+  "popupCopySuccess": {
+    "message": "Copié !",
+    "description": "Texte affiché sur le bouton de copie après avoir copié la réponse avec succès."
+  },
+  "popupErrorCopy": {
+    "message": "Erreur lors de la copie.",
+    "description": "Message d'erreur affiché si la copie du texte de réponse échoue."
+  },
+  "popupTitleOpenOptions": {
+    "message": "Ouvrir les Options",
+    "description": "Infobulle pour le bouton des options dans la popup."
+  },
+  "popupLabelAgent": {
+    "message": "Agent IA",
+    "description": "Étiquette pour la liste déroulante de sélection d'agent dans la popup."
+  },
+  "popupLabelSelectedText": {
+    "message": "Texte Sélectionné",
+    "description": "Étiquette pour la zone de saisie du texte sélectionné dans la popup."
+  },
+  "popupPlaceholderSelectedText": {
+    "message": "Le texte sélectionné apparaîtra ici...",
+    "description": "Texte de remplacement pour la zone de saisie du texte sélectionné."
+  },
+  "popupButtonQueryAgent": {
+    "message": "Interroger l'Agent",
+    "description": "Texte pour le bouton principal d'envoi dans la popup."
+  },
+  "popupStatusPlaceholder": {
+    "message": "Statut...",
+    "description": "Texte de remplacement pour la zone de message d'état."
+  },
+  "popupLabelResponse": {
+    "message": "Réponse de l'IA",
+    "description": "Étiquette pour la zone d'affichage de la réponse de l'IA dans la popup."
+  },
+  "popupPlaceholderResponse": {
+    "message": "La réponse de l'IA apparaîtra ici...",
+    "description": "Texte de remplacement pour la zone d'affichage de la réponse de l'IA."
+  },
+  "popupTitleClear": {
+    "message": "Effacer Texte et Réponse",
+    "description": "Infobulle pour le bouton d'effacement dans la popup."
+  },
+  "popupButtonClear": {
+    "message": "Effacer",
+    "description": "Texte pour le bouton d'effacement dans la popup."
+  },
+  "popupTitleCopy": {
+    "message": "Copier la réponse",
+    "description": "Infobulle pour le bouton de copie dans la popup."
+  },
+  "popupButtonCopy": {
+    "message": "Copier",
+    "description": "Texte pour le bouton de copie dans la popup."
+  },
+  "optionsNoProvidersConfigured": {
+    "message": "Aucun fournisseur configuré.",
+    "description": "Message affiché dans les options lorsque la liste des fournisseurs est vide."
+  },
+  "optionsProviderApiKeyLabel": {
+    "message": "Clé API :",
+    "description": "Étiquette pour l'affichage de la clé API dans la liste des fournisseurs (la valeur est ajoutée séparément)."
+  },
+  "optionsValueNotAvailable": {
+    "message": "N/A",
+    "description": "Espace réservé pour les valeurs 'Non disponible' dans la page d'options."
+  },
+  "optionsButtonEdit": {
+    "message": "Modifier",
+    "description": "Texte pour le bouton de modification."
+  },
+  "optionsButtonDelete": {
+    "message": "Supprimer",
+    "description": "Texte pour le bouton de suppression."
+  },
+  "optionsProviderModalTitleAdd": {
+    "message": "Ajouter un Fournisseur",
+    "description": "Titre de la modale lors de l'ajout d'un nouveau fournisseur."
+  },
+  "optionsAlertProviderNameApiKeyRequired": {
+    "message": "Nom et Clé API obligatoires.",
+    "description": "Message d'alerte si le nom du fournisseur ou la clé API est manquant."
+  },
+  "optionsErrorProviderNotFound": {
+    "message": "Erreur : Fournisseur non trouvé.",
+    "description": "Message d'erreur si un fournisseur ne peut pas être trouvé pour modification/suppression."
+  },
+  "optionsConfirmDeleteProvider": {
+    "message": "Supprimer le fournisseur \"$name$\" ?",
+    "description": "Message de confirmation avant de supprimer un fournisseur.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "OpenAI"
+      }
+    }
+  },
+  "optionsProviderModalTitleEdit": {
+    "message": "Modifier un Fournisseur",
+    "description": "Titre de la modale lors de la modification d'un fournisseur."
+  },
+  "optionsNoAgentsConfigured": {
+    "message": "Aucun agent configuré.",
+    "description": "Message affiché dans les options lorsque la liste des agents est vide."
+  },
+  "optionsAgentModelLabel": {
+    "message": "Modèle :",
+    "description": "Étiquette pour l'affichage du modèle dans la liste des agents (la valeur est ajoutée séparément)."
+  },
+  "optionsAgentProviderLabel": {
+    "message": "Fournisseur :",
+    "description": "Étiquette pour l'affichage du fournisseur dans la liste des agents (la valeur est ajoutée séparément)."
+  },
+  "optionsSelectChoose": {
+    "message": "Choisir...",
+    "description": "Espace réservé générique pour une liste déroulante."
+  },
+  "optionsSelectChooseProvider": {
+    "message": "Choisir fournisseur...",
+    "description": "Espace réservé pour la liste déroulante de sélection du fournisseur dans le formulaire d'agent."
+  },
+  "optionsSelectChooseModel": {
+    "message": "Choisir modèle...",
+    "description": "Espace réservé pour la liste déroulante de sélection du modèle dans le formulaire d'agent."
+  },
+  "optionsSelectNoModelDefined": {
+    "message": "Aucun modèle défini",
+    "description": "Texte affiché dans la liste déroulante des modèles si le fournisseur sélectionné n'a pas de modèles listés."
+  },
+  "optionsAgentModalTitleAdd": {
+    "message": "Ajouter un Agent",
+    "description": "Titre de la modale lors de l'ajout d'un nouvel agent."
+  },
+  "optionsAlertAgentNameRequired": {
+    "message": "Nom agent obligatoire.",
+    "description": "Message d'alerte si le nom de l'agent est manquant."
+  },
+  "optionsErrorAgentNotFound": {
+    "message": "Erreur : Agent non trouvé.",
+    "description": "Message d'erreur si un agent ne peut pas être trouvé pour modification/suppression."
+  },
+  "optionsConfirmDeleteAgent": {
+    "message": "Supprimer l'agent \"$name$\" ?",
+    "description": "Message de confirmation avant de supprimer un agent.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Summarizer"
+      }
+    }
+  },
+  "optionsAgentModalTitleEdit": {
+    "message": "Modifier un Agent",
+    "description": "Titre de la modale lors de la modification d'un agent."
+  },
+  "optionsLogConfigExported": {
+    "message": "Configuration complète exportée.",
+    "description": "Message de log après une exportation de configuration réussie."
+  },
+  "optionsAlertConfigExportedSuccess": {
+    "message": "Configuration exportée avec succès !",
+    "description": "Message d'alerte après une exportation de configuration réussie."
+  },
+  "optionsLogErrorExportingConfig": {
+    "message": "Erreur lors de l'exportation de la configuration :",
+    "description": "Préfixe du message de log d'erreur lors de l'exportation de la configuration."
+  },
+  "optionsAlertErrorExportingConfig": {
+    "message": "Erreur lors de l'exportation de la configuration.",
+    "description": "Message d'alerte affiché si l'exportation de la configuration échoue."
+  },
+  "optionsErrorInvalidImportFileStructure": {
+    "message": "Le fichier JSON ne contient pas une configuration valide (manque settings, providers ou agents).",
+    "description": "Message d'erreur affiché si le fichier JSON importé a une structure invalide."
+  },
+  "optionsConfirmImportConfig": {
+    "message": "Importer la configuration depuis \"$fileName$\" ?\n\nATTENTION : Cela remplacera TOUS vos paramètres, fournisseurs et agents actuels !",
+    "description": "Message de confirmation avant d'importer un fichier de configuration.",
+    "placeholders": {
+      "fileName": {
+        "content": "$1",
+        "example": "ma_config.json"
+      }
+    }
+  },
+  "optionsAlertConfigImportedSuccess": {
+    "message": "Configuration importée avec succès !",
+    "description": "Message d'alerte après une importation de configuration réussie."
+  },
+  "optionsLogErrorImportingConfig": {
+    "message": "Erreur lors de l'importation de la configuration :",
+    "description": "Préfixe du message de log d'erreur lors de l'importation de la configuration."
+  },
+  "optionsAlertErrorImportingConfig": {
+    "message": "Erreur lors de l'importation : $errorMessage$",
+    "description": "Message d'alerte affiché si l'importation de la configuration échoue.",
+    "placeholders": {
+      "errorMessage": {
+        "content": "$1",
+        "example": "Format JSON invalide."
+      }
+    }
+  },
+  "optionsErrorReadingFile": {
+    "message": "Erreur de lecture du fichier.",
+    "description": "Message d'erreur affiché si la lecture du fichier d'importation échoue."
+  },
+  "optionsLogThemeAppliedDark": {
+    "message": "Mode sombre appliqué.",
+    "description": "Message de log lorsque le mode sombre est appliqué."
+  },
+  "optionsLogThemeAppliedLight": {
+    "message": "Mode clair appliqué.",
+    "description": "Message de log lorsque le mode clair est appliqué."
+  },
+  "backgroundErrorMissingAgentIdOrText": {
+    "message": "ID de l'agent ou texte manquant.",
+    "description": "Message d'erreur si l'ID de l'agent ou le texte est manquant dans la requête."
+  },
+  "backgroundErrorProviderNotFoundForAgent": {
+    "message": "Fournisseur non trouvé pour l'agent.",
+    "description": "Message d'erreur si le fournisseur associé à un agent ne peut pas être trouvé."
+  },
+  "backgroundErrorAgentNotFound": {
+    "message": "Agent non trouvé.",
+    "description": "Message d'erreur si l'agent demandé ne peut pas être trouvé."
+  },
+  "backgroundErrorApiHttp": {
+    "message": "Erreur API $status$ : $statusText$ - $errorBody$",
+    "description": "Message d'erreur pour les erreurs HTTP de l'API.",
+    "placeholders": {
+      "status": { "content": "$1", "example": "401" },
+      "statusText": { "content": "$2", "example": "Non autorisé" },
+      "errorBody": { "content": "$3", "example": "{\"error\": \"Clé API invalide\"}" }
+    }
+  },
+  "backgroundErrorUnexpectedApiResponseFormat": {
+    "message": "Format de réponse API inattendu.",
+    "description": "Message d'erreur si le format de réponse de l'API n'est pas celui attendu."
+  },
+  "backgroundErrorUnknown": {
+    "message": "Une erreur inconnue est survenue.",
+    "description": "Message d'erreur générique pour les erreurs inattendues."
+  },
+  "backgroundErrorMissingApiKeyForProvider": {
+    "message": "Clé API manquante pour le fournisseur $providerName$.",
+    "description": "Message d'erreur si la clé API est manquante pour le fournisseur sélectionné.",
+    "placeholders": {
+      "providerName": {
+        "content": "$1",
+        "example": "OpenAI"
+      }
+    }
+  },
+  "backgroundErrorMissingEndpointUrl": {
+    "message": "URL de point de terminaison manquante pour le fournisseur $providerName$.",
+    "description": "Message d'erreur si l'URL du point de terminaison est manquante pour le fournisseur sélectionné.",
+    "placeholders": {
+      "providerName": {
+        "content": "$1",
+        "example": "OpenRouter"
+      }
+    }
+  },
+  "optionsPageTitle": {
+    "message": "Options - Mon Assistant IA",
+    "description": "Titre de la page d'options."
+  },
+  "optionsPageHeading": {
+    "message": "Options - Mon Assistant IA",
+    "description": "Titre principal de la page d'options."
+  },
+  "optionsNavAgents": {
+    "message": "Agents",
+    "description": "Texte de l'onglet de navigation pour les Agents."
+  },
+  "optionsNavProviders": {
+    "message": "Fournisseurs",
+    "description": "Texte de l'onglet de navigation pour les Fournisseurs."
+  },
+  "optionsNavSettings": {
+    "message": "Paramètres",
+    "description": "Texte de l'onglet de navigation pour les Paramètres."
+  },
+  "optionsNavImportExport": {
+    "message": "Import/Export",
+    "description": "Texte de l'onglet de navigation pour Import/Export."
+  },
+  "optionsAgentsHeading": {
+    "message": "Gestion des Agents IA",
+    "description": "Titre de l'onglet Agents."
+  },
+  "optionsAgentsDescription": {
+    "message": "Interface pour créer, modifier et supprimer vos agents IA personnalisés.",
+    "description": "Texte descriptif pour l'onglet Agents."
+  },
+  "optionsButtonAddAgent": {
+    "message": "Ajouter un Agent",
+    "description": "Texte pour le bouton 'Ajouter un Agent'."
+  },
+  "optionsAgentsLoading": {
+    "message": "Chargement des agents...",
+    "description": "Texte de remplacement pendant le chargement des agents."
+  },
+  "optionsProvidersHeading": {
+    "message": "Gestion des Fournisseurs IA",
+    "description": "Titre de l'onglet Fournisseurs."
+  },
+  "optionsProvidersDescription": {
+    "message": "Configurez les fournisseurs d'API IA (OpenAI, OpenRouter, etc.) et leurs clés API.",
+    "description": "Texte descriptif pour l'onglet Fournisseurs."
+  },
+  "optionsButtonAddProvider": {
+    "message": "Ajouter un Fournisseur",
+    "description": "Texte pour le bouton 'Ajouter un Fournisseur'."
+  },
+  "optionsProvidersLoading": {
+    "message": "Chargement des fournisseurs...",
+    "description": "Texte de remplacement pendant le chargement des fournisseurs."
+  },
+  "optionsSettingsHeading": {
+    "message": "Paramètres Généraux",
+    "description": "Titre de l'onglet Paramètres."
+  },
+  "optionsSettingsLabelUseSync": {
+    "message": "Utiliser Chrome Sync pour sauvegarder agents/fournisseurs",
+    "description": "Étiquette pour le commutateur Chrome Sync."
+  },
+  "optionsSettingsLabelDarkMode": {
+    "message": "Mode Sombre",
+    "description": "Étiquette pour le commutateur Mode Sombre."
+  },
+  "optionsSettingsLabelLanguage": {
+    "message": "Langue de l'interface",
+    "description": "Étiquette pour le sélecteur de langue."
+  },
+  "optionsSettingsLanguageAuto": {
+    "message": "Auto (selon le navigateur)",
+    "description": "Option pour utiliser la langue du navigateur."
+  },
+  "optionsSettingsLanguageEnglish": {
+    "message": "Anglais",
+    "description": "Option pour l'anglais."
+  },
+  "optionsSettingsLanguageFrench": {
+    "message": "Français",
+    "description": "Option pour le français."
+  },
+  "optionsModalLabelAgentNameRequired": {
+    "message": "Nom de l'agent <span class='text-danger'>*</span>",
+    "description": "Étiquette pour le champ obligatoire du nom de l'agent dans la modale."
+  },
+  "optionsModalLabelProviderNameRequired": {
+    "message": "Nom du fournisseur <span class='text-danger'>*</span>",
+    "description": "Étiquette pour le champ obligatoire du nom du fournisseur dans la modale."
+  },
+  "optionsModalLabelApiKeyRequired": {
+    "message": "Clé API <span class='text-danger'>*</span>",
+    "description": "Étiquette pour le champ obligatoire de la clé API dans la modale."
+  },
+  "optionsSettingsLanguageHelpText": {
+    "message": "Sélectionnez la langue de l'interface de l'extension. Un redémarrage peut être nécessaire pour appliquer le changement.",
+    "description": "Texte d'aide pour le paramètre de langue."
+  },
+  "optionsImportExportHeading": {
+    "message": "Import / Export de la Configuration",
+    "description": "Titre de l'onglet Import/Export."
+  },
+  "optionsImportExportDescription": {
+    "message": "Sauvegardez ou restaurez l'ensemble de votre configuration (agents, fournisseurs, paramètres).",
+    "description": "Texte descriptif pour l'onglet Import/Export."
+  },
+  "optionsExportTitle": {
+    "message": "Exporter",
+    "description": "Titre de la section Exporter."
+  },
+  "optionsExportDescription": {
+    "message": "Téléchargez un fichier JSON contenant tous vos agents, fournisseurs et paramètres.",
+    "description": "Texte descriptif pour la section Exporter."
+  },
+  "optionsButtonExport": {
+    "message": "Exporter la Configuration Complète",
+    "description": "Texte pour le bouton Exporter."
+  },
+  "optionsImportTitle": {
+    "message": "Importer",
+    "description": "Titre de la section Importer."
+  },
+  "optionsImportDescription": {
+    "message": "Importez une configuration depuis un fichier JSON. <strong class='text-danger'>Attention : Cela remplacera toutes vos données actuelles (agents, fournisseurs, paramètres) !</strong>",
+    "description": "Texte descriptif pour la section Importer, incluant l'avertissement."
+  },
+  "optionsButtonImport": {
+    "message": "Importer une Configuration",
+    "description": "Texte pour le bouton Importer."
+  },
+  "optionsModalLabelAgentName": {
+    "message": "Nom de l'agent",
+    "description": "Étiquette pour le champ nom de l'agent dans la modale."
+  },
+  "optionsModalRequiredIndicator": {
+    "message": "*",
+    "description": "Indicateur pour les champs obligatoires."
+  },
+  "optionsModalLabelProvider": {
+    "message": "Fournisseur IA",
+    "description": "Étiquette pour la sélection du fournisseur dans la modale agent."
+  },
+  "optionsModalLabelModelName": {
+    "message": "Nom du modèle",
+    "description": "Étiquette pour la sélection/saisie du nom du modèle dans la modale agent."
+  },
+  "optionsModalPlaceholderChooseProviderFirst": {
+    "message": "Choisir un fournisseur d'abord...",
+    "description": "Texte de remplacement pour la sélection du modèle quand aucun fournisseur n'est choisi."
+  },
+  "optionsModalLabelSystemPrompt": {
+    "message": "Prompt Système (optionnel)",
+    "description": "Étiquette pour la zone de texte du prompt système dans la modale agent."
+  },
+  "optionsModalPlaceholderSystemPrompt": {
+    "message": "Instructions initiales pour l'IA...",
+    "description": "Texte de remplacement pour la zone de texte du prompt système."
+  },
+  "optionsModalLabelUserPrompt": {
+    "message": "Prompt Utilisateur",
+    "description": "Étiquette pour la zone de texte du prompt utilisateur dans la modale agent."
+  },
+  "optionsModalPlaceholderUserPrompt": {
+    "message": "Votre requête à l'IA. Utilisez {{selected_text}} pour insérer le texte sélectionné.",
+    "description": "Texte de remplacement pour la zone de texte du prompt utilisateur."
+  },
+  "optionsModalUserPromptHelpText": {
+    "message": "Utilisez {{selected_text}} sera remplacé par le texte sélectionné dans la page.",
+    "description": "Texte d'aide expliquant le placeholder {{selected_text}}."
+  },
+  "optionsSettingsSyncChangeAlert": {
+    "message": "Changer le type de stockage (local vs. synchronisé) ne migre pas automatiquement vos données. Veuillez utiliser la fonction d'export/import pour déplacer vos paramètres, fournisseurs et agents si nécessaire.",
+    "description": "Message d'alerte pour le changement de type de stockage."
+  },
+  "optionsButtonToggleApiKeyVisibility": {
+    "message": "Afficher/Masquer la clé API",
+    "description": "Titre pour le bouton qui affiche/masque la clé API."
+  },
+  "optionsModalPlaceholderNewModel": {
+    "message": "Entrez un nom de modèle",
+    "description": "Texte de remplacement pour le champ de saisie d'un nouveau modèle."
+  },
+  "optionsButtonAddModel": {
+    "message": "Ajouter",
+    "description": "Texte du bouton pour ajouter un nouveau modèle."
+  },
+  "optionsModalHeadingAdvancedSettings": {
+    "message": "Paramètres Avancés (optionnel)",
+    "description": "Titre pour la section des paramètres avancés dans les modales."
+  },
+  "optionsModalLabelTemperature": {
+    "message": "Température",
+    "description": "Étiquette pour le champ température."
+  },
+  "optionsModalPlaceholderTemperature": {
+    "message": "ex : 0.7",
+    "description": "Texte de remplacement pour le champ température."
+  },
+  "optionsModalLabelTopP": {
+    "message": "Top P",
+    "description": "Étiquette pour le champ Top P."
+  },
+  "optionsModalPlaceholderTopP": {
+    "message": "ex : 1.0",
+    "description": "Texte de remplacement pour le champ Top P."
+  },
+  "optionsModalLabelPresencePenalty": {
+    "message": "Presence Penalty",
+    "description": "Étiquette pour le champ Presence Penalty."
+  },
+  "optionsModalPlaceholderPenalty": {
+    "message": "ex : 0",
+    "description": "Texte de remplacement pour les champs de pénalité (presence et frequency)."
+  },
+  "optionsModalLabelFrequencyPenalty": {
+    "message": "Frequency Penalty",
+    "description": "Étiquette pour le champ Frequency Penalty."
+  },
+  "optionsModalButtonCancel": {
+    "message": "Annuler",
+    "description": "Texte pour le bouton Annuler dans les modales."
+  },
+  "optionsModalButtonSave": {
+    "message": "Enregistrer",
+    "description": "Texte pour le bouton Enregistrer dans les modales."
+  },
+  "optionsModalLabelProviderName": {
+    "message": "Nom du fournisseur",
+    "description": "Étiquette pour le champ nom du fournisseur dans la modale."
+  },
+  "optionsModalPlaceholderProviderName": {
+    "message": "ex : OpenAI, OpenRouter",
+    "description": "Texte de remplacement pour le champ nom du fournisseur."
+  },
+  "optionsModalLabelApiKey": {
+    "message": "Clé API",
+    "description": "Étiquette pour le champ clé API dans la modale fournisseur."
+  },
+  "optionsModalPlaceholderApiKey": {
+    "message": "Votre clé API (stockée localement)",
+    "description": "Texte de remplacement pour le champ clé API."
+  },
+  "optionsModalApiKeyHelpText": {
+    "message": "La clé API est stockée localement dans votre navigateur et n'est jamais envoyée ailleurs que vers l'endpoint du fournisseur.",
+    "description": "Texte d'aide expliquant le stockage de la clé API."
+  },
+  "optionsModalLabelEndpointUrl": {
+    "message": "URL de l'Endpoint",
+    "description": "Étiquette pour le champ URL de l'endpoint dans la modale fournisseur."
+  },
+  "optionsModalPlaceholderEndpointUrl": {
+    "message": "ex : https://api.openai.com/v1/chat/completions",
+    "description": "Texte de remplacement pour le champ URL de l'endpoint."
+  },
+  "optionsModalEndpointUrlHelpText": {
+    "message": "Laissez vide pour utiliser l'URL par défaut si connue (ex : OpenAI).",
+    "description": "Texte d'aide pour le champ URL de l'endpoint."
+  },
+  "optionsModalLabelAvailableModels": {
+    "message": "Modèles Disponibles (optionnel)",
+    "description": "Étiquette pour la zone de texte des modèles disponibles dans la modale fournisseur."
+  },
+  "optionsModalPlaceholderAvailableModels": {
+    "message": "Entrez un nom de modèle par ligne (ex : gpt-4-turbo\\ngpt-3.5-turbo)",
+    "description": "Texte de remplacement pour la zone de texte des modèles disponibles."
+  },
+  "optionsModalAvailableModelsHelpText": {
+    "message": "Si laissé vide, l'extension essaiera d'utiliser les modèles courants ou ceux spécifiés dans l'agent.",
+    "description": "Texte d'aide pour la zone de texte des modèles disponibles."
+  },
+  "optionsModalAdvancedSettingsHelpText": {
+    "message": "Ces valeurs seront utilisées par défaut pour les agents utilisant ce fournisseur, sauf si elles sont surchargées dans l'agent lui-même.",
+    "description": "Texte d'aide pour la section des paramètres avancés dans la modale fournisseur."
+  },
+  "optionsModalLabelModels": {
+    "message": "Modèles <span class=\"text-danger\">*</span>",
+    "description": "Étiquette pour le champ des modèles dans le formulaire de fournisseur."
+  },
+  "optionsModalHelpModels": {
+    "message": "Ajoutez les modèles proposés par ce fournisseur. Cliquez sur <b>Ajouter</b> pour ajouter un modèle après avoir saisi son nom.",
+  "description": "Texte d'aide expliquant comment utiliser le système d'ajout de modèles."
+}
+}
