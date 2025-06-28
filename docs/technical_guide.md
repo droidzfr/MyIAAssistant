@@ -25,7 +25,7 @@ This document describes the technical architecture, project structure, and desig
     - [API Key Management](#api-key-management)
   - [7. Development and Contribution](#7-development-and-contribution)
     - [Development Installation](#development-installation)
-    - [Potential Improvement Areas](#potential-improvement-areas)
+    - [Building for Production](#building-for-production)
 
 ---
 
@@ -195,3 +195,26 @@ This structure logically organizes the code by separating the different parts of
 4.  Click "Load unpacked".
 5.  Select the root project folder (the folder containing `manifest.json`).
 6.  The "My IA Assistant" extension should now appear in your extensions list and its icon in the toolbar.
+
+### Building for Production
+
+To package the extension for the Chrome Web Store, a build script (`build.js`) is provided. This script automates the process of creating a `.zip` file containing all the necessary files for the extension.
+
+**Prerequisites:**
+*   [Node.js](https://nodejs.org/) and npm must be installed on your system.
+
+**Steps:**
+
+1.  **Install dependencies:**
+    Open a terminal in the project's root directory and run the following command to install the required `archiver` package:
+    ```bash
+    npm install archiver
+    ```
+
+2.  **Run the build script:**
+    Once the dependency is installed, run the build script with Node.js:
+    ```bash
+    node build.js
+    ```
+
+The script will read the `manifest.json` and `_locales/en/messages.json` to determine the extension's name and version, then create a compressed `.zip` file (e.g., `MyIAAssistant_v1.0.0.zip`) in the root directory. This file is ready to be uploaded to the Chrome Web Store.
