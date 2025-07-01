@@ -37,13 +37,27 @@ This guide will help you install, configure, and use the "My IA Assistant" Chrom
 
 ## 2. Installation
 
-As the extension is not yet published on the Chrome Web Store, here is how to install it for development:
+There are two ways to install the extension:
+
+### Method 1: From the Chrome Web Store (Recommended)
+
+This is the easiest and recommended method for most users.
+
+1.  Go to the extension's page on the Chrome Web Store:
+    *   [**"My IA Assistant" on Chrome Web Store**](https://chromewebstore.google.com/detail/mon-assistant-ia/omdknomjhfchjefijlpineifhkjoimnm)
+2.  Click "Add to Chrome".
+3.  Confirm the installation.
+4.  **All set!** The "My IA Assistant" icon should now appear in your Chrome toolbar.
+
+### Method 2: From Source (for Development)
+
+This method is for developers who want to modify the code or test the latest unreleased version.
 
 1.  **Download the code**: Clone or download this repository to your computer.
 2.  **Open Chrome**: Go to the extensions page by typing `chrome://extensions/` in the address bar.
 3.  **Enable Developer Mode**: Check the "Developer mode" switch in the top right corner of the page.
 4.  **Load the extension**: Click the "Load unpacked" button and select the project's root folder (the one containing the `manifest.json` file).
-5.  **All set!** The "My IA Assistant" icon should now appear in your Chrome toolbar.
+5.  **Done!** The extension is now installed locally.
 
 ## 3. Interface Overview
 

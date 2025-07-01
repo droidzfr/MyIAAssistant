@@ -1,5 +1,7 @@
 # My IA Assistant - Chrome Extension
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/omdknomjhfchjefijlpineifhkjoimnm?style=for-the-badge)](https://chromewebstore.google.com/detail/mon-assistant-ia/omdknomjhfchjefijlpineifhkjoimnm)
+
 This is a personal project developed for my own use. I'm sharing it in the hope that it might be useful to others.
 
 Please keep in mind that I'm not a Chrome extension or JavaScript developer, so there might be some rough edges.
@@ -22,7 +24,15 @@ Please keep in mind that I'm not a Chrome extension or JavaScript developer, so 
 *   **Import/Export:** Save and restore your entire configuration (agents, providers, settings) via a JSON file.
 *   **Dark Mode:** Interface adaptable to light or dark themes.
 
-## Installation (Development)
+## Installation
+
+### From the Chrome Web Store (Recommended)
+
+You can install the extension directly from the Chrome Web Store:
+
+[**Install "My IA Assistant"**](https://chromewebstore.google.com/detail/mon-assistant-ia/omdknomjhfchjefijlpineifhkjoimnm)
+
+### From Source (for Development)
 
 1.  Clone or download this repository to your local machine.
 2.  Open Google Chrome and navigate to `chrome://extensions/`.
