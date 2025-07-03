@@ -581,7 +581,7 @@
     "description": "Étiquette pour la zone de texte des modèles disponibles dans la modale fournisseur."
   },
   "optionsModalPlaceholderAvailableModels": {
-    "message": "Entrez un nom de modèle par ligne (ex : gpt-4-turbo\\ngpt-3.5-turbo)",
+    "message": "Entrez un nom de modèle par ligne (ex : gpt-4o\\ngpt-4o-mini)",
     "description": "Texte de remplacement pour la zone de texte des modèles disponibles."
   },
   "optionsModalAvailableModelsHelpText": {

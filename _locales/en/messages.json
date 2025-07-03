@@ -581,7 +581,7 @@
     "description": "Label for the available models textarea in the provider modal."
   },
   "optionsModalPlaceholderAvailableModels": {
-    "message": "Enter one model name per line (e.g., gpt-4-turbo\\ngpt-3.5-turbo)",
+    "message": "Enter one model name per line (e.g., gpt-4o\\ngpt-4o-mini)",
     "description": "Placeholder for the available models textarea."
   },
   "optionsModalAvailableModelsHelpText": {

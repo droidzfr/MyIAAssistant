@@ -91,7 +91,7 @@ Before you can create an agent, you must configure at least one API provider. Th
     *   **Name**: A name to recognize the provider (e.g., "My OpenAI Account").
     *   **API Key**: Your secret API key.
     *   **Endpoint URL**: Leave empty for default OpenAI, or specify a URL for compatible providers (e.g., OpenRouter).
-    *   **Available Models**: List the models you want to use (e.g., `gpt-4`, `gpt-3.5-turbo`).
+    *   **Available Models**: List the models you want to use (e.g., `gpt-4o`, `gpt-4o-mini`).
 3.  Save.
 
 ### Editing/Deleting a Provider
